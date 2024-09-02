@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIT Rourkela Alumni Association</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/logo.png" alt="NIT Rourkela Logo">
+                <div class="brand-text">NIT Rourkela<br>Alumni Association</div>
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#events">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#attendees">Attendees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#venues">Venue</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a class="btn btn-primary" href="register.html">Register for Event</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <!-- Home Section -->
+            <section id="home" class="section">
+                <div class="nitr-alumni-meet-container">
+                    <div class="nitr-alumni-meet-header">
+                        <h1 class="section-title">NIT ROURKELA GLOBAL ALUMNI MEET 2024</h1>
+                        <p class="nitr-alumni-meet-location">The Eagleton Resort, Bengaluru</p>
+                    </div>
+                    <div class="nitr-alumni-meet-details">
+                        <p>SAVE THE DATES: <br> December 2024</p>
+                        <div class="nitr-alumni-meet-qr-placeholder">
+                            <img src="assets/images/qr-code.png" class="qr-code" alt="QR Code">
+                        </div>
+                        <a href="register.html" class="nitr-alumni-meet-register-btn">Register for Event</a>
+                    </div>
+                    <div class="nitr-alumni-meet-images">
+                        <div class="nitr-alumni-meet-image">
+                            <img src="assets/images/1.jpg" alt="Image 1">
+                        </div>
+                        <div class="nitr-alumni-meet-image">
+                            <img src="assets/images/2.jpg" alt="Image 2">
+                        </div>
+                        <div class="nitr-alumni-meet-image">
+                            <img src="assets/images/3.jpg" alt="Image 3">
+                        </div>
+                        <div class="nitr-alumni-meet-image">
+                            <img src="assets/images/4.jpg" alt="Image 4">
+                        </div>
+                        <div class="nitr-alumni-meet-image">
+                            <img src="assets/images/5.png" alt="Image 5">
+                        </div>
+                        <div class="nitr-alumni-meet-image">
+                            <img src="assets/images/6.png" alt="Image 6">
+                        </div>
+                        <div class="nitr-alumni-meet-image">
+                            <img src="assets/images/7.jpg" alt="Image 7">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Events Section -->
+            <section id="events" class="section">
+                <div class="container">
+                    <h2 class="section-title">Upcoming Events</h2>
+                    <div class="card-container">
+                        <div class="card">
+                            <img src="assets/images/nit.jpg" class="card-img-top" alt="Event Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Event 1</h5>
+                                <p class="card-text">Description for Event 1 goes here. Details about the event, date,
+                                    and venue can be added.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="assets/images/nit.jpg" class="card-img-top" alt="Event Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Event 2</h5>
+                                <p class="card-text">Description for Event 2 goes here. Details about the event, date,
+                                    and venue can be added.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="assets/images/nit.jpg" class="card-img-top" alt="Event Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Event 3</h5>
+                                <p class="card-text">Description for Event 3 goes here. Details about the event, date,
+                                    and venue can be added.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Attendees Section -->
+            <section id="attendees" class="section">
+                <div class="container">
+                    <h2 class="section-title">Registered Attendees</h2>
+
+                    <!-- Search Bar -->
+                    <div class="row mb-3">
+                        <div class="col-md-4 offset-md-8">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Search attendees...">
+                        </div>
+                    </div>
+
+                    <!-- Attendees Table -->
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead style="background-color: #c35839; color: white;">
+                                <tr>
+                                    <th>Person Name</th>
+                                    <th>Batch</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                            <tbody id="attendeesTable">
+                                <!-- Dynamic content will be inserted here -->
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center" id="pagination">
+                            <!-- Pagination items will be generated by JavaScript -->
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+
+            <!-- Venues Section -->
+            <section id="venues" class="section" style="position: relative;">
+                <div class="container-fluid"
+                    style="background-image: url('assets/images/venue.png'); background-size: cover; background-position: center; padding: 50px 0;">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Location Details -->
+                            <div class="col-lg-6 d-flex flex-column justify-content-center"
+                                style="background: rgba(0, 0, 0, 0.7); padding: 20px; border-radius: 8px;">
+                                <h2 class="section-title" style="font-size: 2.5rem; color: white; font-weight: 700;">
+                                    Event Venue</h2>
+                                <h4 style="font-weight: 700; color: yellow;">Eagleton The Golf Resort</h4>
+                                <p style="font-size: 1.2rem; color: white;">Bengaluru, Karnataka, India</p>
+                                <p style="color: white;">Join us at the prestigious Eagleton The Golf Resort, known for
+                                    its beautiful landscape and world-class facilities. Perfect for reconnecting with
+                                    old friends and
+                                    making new memories.</p>
+                            </div>
+
+                            <!-- Google Maps Embed -->
+                            <div class="col-lg-6 mt-4 mt-lg-0">
+                                <div class="map-container" style="height: 100%; border-radius: 8px; overflow: hidden;">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1635.8437505821105!2d77.4129855362867!3d12.797074087767763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae4667c9a4588d%3A0x11c2a04a55bb1c77!2sEagleton%20The%20Golf%20Resort!5e0!3m2!1sen!2sin!4v1725224883369!5m2!1sen!2sin"
+                                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-body-tertiary text-center text-lg-start py-3">
+        <div class="d-flex justify-content-center mb-2">
+            <a href="https://www.instagram.com/nitrourkela1961/" target="_blank" class="text-body mx-2"
+                style="font-size: 1.5rem;">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com/nitrourkela" target="_blank" class="text-body mx-2" style="font-size: 1.5rem;">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/nitrkl1" target="_blank" class="text-body mx-2"
+                style="font-size: 1.5rem;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.linkedin.com/school/national-institute-of-technology-rourkela/" target="_blank"
+                class="text-body mx-2" style="font-size: 1.5rem;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.youtube.com/@NITROURKELA1961" target="_blank" class="text-body mx-2"
+                style="font-size: 1.5rem;">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        <div class="text-center">
+            © 2024 Copyright:
+            <a class="text-body" href="https://www.nitrkl.ac.in/">NIT Rourkela</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

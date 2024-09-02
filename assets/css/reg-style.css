@@ -1,0 +1,130 @@
+:root {
+    --primary-color: #C35839;
+    --secondary-color: #333333;
+    --light-color: #FFFFFF;
+    --accent-color: #ECE6D4;
+}
+
+body {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background-color: var(--light-color);
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(195, 88, 57, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #A64B30;
+    border-color: #A64B30;
+}
+
+.btn-outline-secondary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+}
+
+.guest-counter {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 180px;
+}
+
+.guest-counter .btn {
+    border: none;
+    background-color: transparent;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+}
+
+.guest-counter span {
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    min-width: 50px;
+    text-align: center;
+}
+
+.order-summary {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-title i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    color: var(--secondary-color);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.back-button i {
+    margin-right: 0.5rem;
+}
+
+.invalid-feedback {
+    color: var(--secondary-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}

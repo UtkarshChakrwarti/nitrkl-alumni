@@ -1,0 +1,359 @@
+:root {
+    --primary-color: #C35839;
+    --secondary-color: #333333;
+    --light-color: #FFFFFF;
+    --accent-color: #ECE6D4;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 80px;
+}
+
+.section {
+    padding: 100px 0;
+    min-height: 100dvh;
+}
+
+.section:nth-child(odd) {
+    background-color: var(--accent-color);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 15px auto 0;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (max-width: 576px) {
+    .card img {
+        height: 150px;
+    }
+}
+
+.navbar {
+    background-color: var(--light-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    transition: all 0.3s ease;
+    padding: 15px 0;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.navbar-brand .brand-text {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    color: var(--secondary-color) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem !important;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    transition: .5s ease-in-out;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--primary-color);
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.navbar-toggler span:nth-child(1) {
+    top: 0px;
+}
+
+.navbar-toggler span:nth-child(2),
+.navbar-toggler span:nth-child(3) {
+    top: 8px;
+}
+
+.navbar-toggler span:nth-child(4) {
+    top: 16px;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+    top: 8px;
+    width: 0%;
+    left: 50%;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(4) {
+    top: 8px;
+    width: 0%;
+    left: 50%;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--light-color) !important;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.nitr-alumni-meet-2024 {
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(135deg, #f4f4f4 0%, #ffffff 100%);
+    margin: 0;
+    padding: 0;
+    color: var(--secondary-color);
+}
+
+.nitr-alumni-meet-container {
+    max-width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.nitr-alumni-meet-header {
+    margin-bottom: 40px;
+    animation: nitrAlumniFadeIn 2s ease-in-out;
+}
+
+.nitr-alumni-meet-header h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(24px, 5vw, 42px);
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #2c3e50;
+}
+
+.nitr-alumni-meet-header .nitr-alumni-meet-location {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(16px, 3vw, 18px);
+    color: #777777;
+    margin-top: 15px;
+}
+
+.nitr-alumni-meet-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+}
+
+.nitr-alumni-meet-details p {
+    margin: 0;
+    font-size: clamp(16px, 3vw, 18px);
+    font-weight: 500;
+}
+
+.nitr-alumni-meet-qr-placeholder {
+    width: 120px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nitr-alumni-meet-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(15px, 3vw, 40px);
+    margin-top: 20px;
+}
+
+.nitr-alumni-meet-image {
+    width: clamp(80px, 15vw, 140px);
+    height: clamp(80px, 15vw, 140px);
+    background-color: #f0f0f0;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.nitr-alumni-meet-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140%;
+    height: 140%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0.9;
+}
+
+.nitr-alumni-meet-image:hover img {
+    transform: translate(-50%, -50%) rotate(-45deg) scale(1.05);
+    opacity: 1;
+}
+
+.nitr-alumni-meet-image:hover {
+    transform: rotate(45deg) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .nitr-alumni-meet-details {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .nitr-alumni-meet-qr-placeholder {
+        margin: 20px auto;
+    }
+}
+
+@keyframes nitrAlumniFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.qr-code {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nitr-alumni-meet-register-btn {
+    display: inline-block;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border: 1px solid var(--light-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px;
+}
+
+.nitr-alumni-meet-register-btn:hover {
+    background-color: transparent;
+    color: var(--light-color);
+}

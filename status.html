@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Status - NIT Rourkela Global Alumni Meet 2024</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #C35839;
+            --secondary-color: #333333;
+            --light-color: #FFFFFF;
+            --accent-color: #F2F2F2;
+            --success-color: #27AE60;
+            --failure-color: #E74C3C;
+            --pending-color: #F39C12;
+        }
+        body {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            background-color: var(--light-color);
+        }
+        .card-header {
+            border-top-left-radius: 15px !important;
+            border-top-right-radius: 15px !important;
+            text-align: center;
+        }
+        .card-header img {
+            max-width: 100px;
+        }
+        .status-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .status-message {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+        .order-summary {
+            background-color: var(--accent-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            margin-bottom: 2rem;
+        }
+        .order-summary p {
+            margin-bottom: 0.5rem;
+        }
+        .order-summary .fw-bold {
+            font-weight: 700;
+        }
+        .download-button, .home-button {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        .download-button:hover, .home-button:hover {
+            background-color: #A64B30;
+            border-color: #A64B30;
+            color: var(--light-color);
+        }
+        .success-header { background-color: var(--success-color); }
+        .failure-header { background-color: var(--failure-color); }
+        .pending-header { background-color: var(--pending-color); }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div id="status-header" class="card-header py-4">
+                        <img src="assets/images/logo.png" alt="NIT Rourkela Logo" class="img-fluid mx-auto d-block mb-2">
+                        <h1 class="mb-0 fs-4 text-light">Payment Status</h1>
+                    </div>
+                    <div class="card-body p-4 p-md-5 text-center">
+                        <!-- Payment Status: Success -->
+                        <div id="status-success" class="status-section" style="display: none;">
+                            <i class="fas fa-check-circle status-icon text-success"></i>
+                            <p class="status-message text-success">Thank you! Your payment has been successfully processed.</p>
+                        </div>
+                        <!-- Payment Status: Failure -->
+                        <div id="status-failure" class="status-section" style="display: none;">
+                            <i class="fas fa-times-circle status-icon text-danger"></i>
+                            <p class="status-message text-danger">Sorry, your payment failed. Please try again or contact support.</p>
+                        </div>
+                        <!-- Payment Status: Pending -->
+                        <div id="status-pending" class="status-section" style="display: none;">
+                            <i class="fas fa-hourglass-half status-icon text-warning"></i>
+                            <p class="status-message text-warning">Your payment is pending. We will notify you once it is confirmed.</p>
+                        </div>
+                        <!-- Order Summary -->
+                        <div id="confirmation-details" class="order-summary">
+                            <h3 class="fs-5 mb-3">Your Registration Details:</h3>
+                            <p><strong>Order ID:</strong> <span id="order-id"></span></p>
+                            <p><strong>First Name:</strong> <span id="first-name"></span></p>
+                            <p><strong>Last Name:</strong> <span id="last-name"></span></p>
+                            <p><strong>Phone Number:</strong> <span id="phone-number"></span></p>
+                            <p><strong>Gender:</strong> <span id="gender"></span></p>
+                            <p><strong>Year of Graduation:</strong> <span id="graduation-year"></span></p>
+                            <p><strong>Branch:</strong> <span id="branch"></span></p>
+                            <p><strong>Accompanied Persons:</strong> <span id="accompanied-persons"></span></p>
+                            <p><strong>Parents:</strong> <span id="parents"></span></p>
+                            <p><strong>Children:</strong> <span id="children"></span></p>
+                            <p><strong>Contribution Amount:</strong> <span id="contribution-amount"></span></p>
+                            <p><strong>Total Amount:</strong> <span id="total-amount"></span></p>
+                        </div>
+                        <div class="text-center">
+                            <button id="download-btn" class="btn download-button mt-4">Download Confirmation as PDF</button>
+                            <button id="home-btn" class="btn home-button mt-4">Back to Home</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulating different payment statuses
+        const paymentStatuses = ['success', 'failure', 'pending'];
+        const paymentStatus = paymentStatuses[Math.floor(Math.random() * paymentStatuses.length)];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const successSection = document.getElementById('status-success');
+            const failureSection = document.getElementById('status-failure');
+            const pendingSection = document.getElementById('status-pending');
+            const confirmationDetails = document.getElementById('confirmation-details');
+            const statusHeader = document.getElementById('status-header');
+            const downloadBtn = document.getElementById('download-btn');
+
+            // Sample data (in a real scenario, this would come from a server)
+            const orderDetails = {
+                orderId: '#' + Math.floor(Math.random() * 1000000000),
+                firstName: 'John',
+                lastName: 'Doe',
+                phoneNumber: '+91 9876543210',
+                gender: 'Male',
+                graduationYear: '2015',
+                branch: 'Computer Science and Engineering',
+                accompaniedPersons: 2,
+                parents: 1,
+                children: 1,
+                contributionAmount: '₹500',
+                totalAmount: '₹2500'
+            };
+
+            // Populate order details
+            document.getElementById('order-id').textContent = orderDetails.orderId;
+            document.getElementById('first-name').textContent = orderDetails.firstName;
+            document.getElementById('last-name').textContent = orderDetails.lastName;
+            document.getElementById('phone-number').textContent = orderDetails.phoneNumber;
+            document.getElementById('gender').textContent = orderDetails.gender;
+            document.getElementById('graduation-year').textContent = orderDetails.graduationYear;
+            document.getElementById('branch').textContent = orderDetails.branch;
+            document.getElementById('accompanied-persons').textContent = orderDetails.accompaniedPersons;
+            document.getElementById('parents').textContent = orderDetails.parents;
+            document.getElementById('children').textContent = orderDetails.children;
+            document.getElementById('contribution-amount').textContent = orderDetails.contributionAmount;
+            document.getElementById('total-amount').textContent = orderDetails.totalAmount;
+
+            if (paymentStatus === 'success') {
+                successSection.style.display = 'block';
+                statusHeader.classList.add('success-header');
+            } else if (paymentStatus === 'failure') {
+                failureSection.style.display = 'block';
+                confirmationDetails.style.display = 'none';
+                statusHeader.classList.add('failure-header');
+                downloadBtn.style.display = 'none';
+            } else if (paymentStatus === 'pending') {
+                pendingSection.style.display = 'block';
+                confirmationDetails.style.display = 'none';
+                statusHeader.classList.add('pending-header');
+                downloadBtn.style.display = 'none';
+            }
+        });
+
+        document.getElementById('download-btn').addEventListener('click', function () {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.setFontSize(16);
+            doc.text("Payment Confirmation", 20, 20);
+            doc.setFontSize(12);
+            doc.text("NIT Rourkela Global Alumni Meet 2024", 20, 30);
+            doc.text("Thank you! Your payment has been successfully processed.", 20, 40);
+
+            const details = document.getElementById('confirmation-details').innerText;
+            const lines = doc.splitTextToSize(details, 180);
+            doc.text(lines, 20, 60);
+
+            doc.save("payment-confirmation.pdf");
+        });
+
+        document.getElementById('home-btn').addEventListener('click', function () {
+            window.location.href = 'index.html'; // Change this to your home page URL
+        });
+    </script>
+</body>
+</html>
