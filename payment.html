@@ -35,6 +35,7 @@
         }
 
         .payment-info {
+            display: none;
             margin-top: 20px;
             background-color: #fff8e1;
             padding: 20px;
@@ -68,6 +69,14 @@
     <div class="registration-container">
         <h2 class="section-title">Alumni Registration</h2>
 
+        <div id="registration-section">
+            <div class="form-group">
+                <label for="email">Email Verification:</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                <button class="btn btn-primary" id="verify-email-btn">Verify Email</button>
+            </div>
+        </div>
+
         <!-- Payment Info Section -->
         <div id="payment-info-section" class="payment-info">
             <p><strong>FYI:</strong> You are now provisionally registered for the event.</p>
@@ -94,6 +103,17 @@
 
     <!-- Custom Script -->
     <script>
+        document.getElementById('verify-email-btn').addEventListener('click', function () {
+            // Dummy email verification
+            let email = document.getElementById('email').value;
+            if (email) {
+                document.getElementById('registration-section').style.display = 'none';
+                document.getElementById('payment-info-section').style.display = 'block';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+
         document.getElementById('confirm-payment-btn').addEventListener('click', function () {
             // Dummy payment confirmation
             let transactionId = document.getElementById('transaction-id').value;
