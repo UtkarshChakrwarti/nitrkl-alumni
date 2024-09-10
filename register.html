@@ -35,6 +35,22 @@
         .is-invalid+.invalid-feedback {
             display: block;
         }
+
+        .form-check-input {
+            margin-right: 8px;
+        }
+
+        .order-summary {
+            background-color: #f8f9fa;
+        }
+
+        .order-summary h3 {
+            font-size: 1.2rem;
+        }
+
+        .order-summary p {
+            font-size: 1rem;
+        }
     </style>
 </head>
 
@@ -51,13 +67,10 @@
                             style="max-width: 200px;">
                         <form id="registration-form" action="status.html" novalidate>
                             <h4 class="text-center mb-2">Registration or Verification of Booking</h4>
-                            
                             <div class="email-verification">
-
                                 <input type="email" class="form-control" id="email" name="email"
                                     placeholder="Enter your email" required>
                                 <button type="button" id="verify-email" class="btn btn-primary">Verify</button>
-
                             </div>
                             <div class="otp-verification" style="display: none;">
                                 <input type="text" class="form-control" id="otp" name="otp" placeholder="Enter OTP"
@@ -75,9 +88,7 @@
                                         <label for="first-name" class="form-label">First Name</label>
                                         <input type="text" class="form-control" id="first-name" name="first-name"
                                             required>
-                                        <div class="invalid-feedback">
-                                            Please enter your first name.
-                                        </div>
+                                        <div class="invalid-feedback">Please enter your first name.</div>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="middle-name" class="form-label">Middle Name</label>
@@ -87,18 +98,14 @@
                                         <label for="last-name" class="form-label">Last Name</label>
                                         <input type="text" class="form-control" id="last-name" name="last-name"
                                             required>
-                                        <div class="invalid-feedback">
-                                            Please enter your last name.
-                                        </div>
+                                        <div class="invalid-feedback">Please enter your last name.</div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">Phone Number</label>
                                     <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{10}"
                                         maxlength="10" required>
-                                    <div class="invalid-feedback">
-                                        Please enter a valid 10-digit phone number.
-                                    </div>
+                                    <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
                                 </div>
                                 <div class="mb-3 form-check">
                                     <input type="checkbox" class="form-check-input" id="whatsapp-same"
@@ -115,18 +122,14 @@
                                         <option value="female">Female</option>
                                         <option value="other">Other</option>
                                     </select>
-                                    <div class="invalid-feedback">
-                                        Please select your gender.
-                                    </div>
+                                    <div class="invalid-feedback">Please select your gender.</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="graduation-year" class="form-label">Year of Graduation</label>
                                     <select class="form-select" id="graduation-year" name="graduation-year" required>
                                         <option value="">Select Year</option>
                                     </select>
-                                    <div class="invalid-feedback">
-                                        Please select your year of graduation.
-                                    </div>
+                                    <div class="invalid-feedback">Please select your year of graduation.</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="branch" class="form-label">Branch</label>
@@ -137,9 +140,7 @@
                                         <option value="ee">Electrical Engineering</option>
                                         <option value="me">Mechanical Engineering</option>
                                     </select>
-                                    <div class="invalid-feedback">
-                                        Please select your branch.
-                                    </div>
+                                    <div class="invalid-feedback">Please select your branch.</div>
                                 </div>
                                 <div class="d-grid">
                                     <button type="button" id="next-btn" class="btn btn-primary">Next <i
@@ -154,32 +155,32 @@
                                     <h2 class="fs-5 mb-0">Additional Information</h2>
                                 </div>
                                 <div class="guest-info d-flex justify-content-between align-items-center mb-3">
-                                    <label class="form-label mb-0">Accompanied Persons</label>
+                                    <label class="form-label mb-0">Spouse/Companion Registration</label>
                                     <div class="guest-counter">
-                                        <button type="button" class="btn btn-light" data-guest="accompanied"
+                                        <button type="button" class="btn btn-light" data-guest="spouse"
                                             data-action="decrease"><i class="fas fa-minus"></i></button>
-                                        <span id="accompanied-count">0</span>
-                                        <button type="button" class="btn btn-light" data-guest="accompanied"
+                                        <span id="spouse-count">0</span>
+                                        <button type="button" class="btn btn-light" data-guest="spouse"
                                             data-action="increase"><i class="fas fa-plus"></i></button>
                                     </div>
                                 </div>
                                 <div class="guest-info d-flex justify-content-between align-items-center mb-3">
-                                    <label class="form-label mb-0">Parents</label>
+                                    <label class="form-label mb-0">Children above 12 years</label>
                                     <div class="guest-counter">
-                                        <button type="button" class="btn btn-light" data-guest="parents"
+                                        <button type="button" class="btn btn-light" data-guest="children_above_12"
                                             data-action="decrease"><i class="fas fa-minus"></i></button>
-                                        <span id="parents-count">0</span>
-                                        <button type="button" class="btn btn-light" data-guest="parents"
+                                        <span id="children-above-12-count">0</span>
+                                        <button type="button" class="btn btn-light" data-guest="children_above_12"
                                             data-action="increase"><i class="fas fa-plus"></i></button>
                                     </div>
                                 </div>
                                 <div class="guest-info d-flex justify-content-between align-items-center mb-3">
-                                    <label class="form-label mb-0">Children</label>
+                                    <label class="form-label mb-0">Children below 12 years</label>
                                     <div class="guest-counter">
-                                        <button type="button" class="btn btn-light" data-guest="children"
+                                        <button type="button" class="btn btn-light" data-guest="children_below_12"
                                             data-action="decrease"><i class="fas fa-minus"></i></button>
-                                        <span id="children-count">0</span>
-                                        <button type="button" class="btn btn-light" data-guest="children"
+                                        <span id="children-below-12-count">0</span>
+                                        <button type="button" class="btn btn-light" data-guest="children_below_12"
                                             data-action="increase"><i class="fas fa-plus"></i></button>
                                     </div>
                                 </div>
@@ -195,11 +196,19 @@
                                     <h3 class="fs-5 mb-3">Order Summary</h3>
                                     <p class="d-flex justify-content-between">
                                         <span>Registration Fee:</span>
-                                        <span>₹<span id="registration-fee">1000</span></span>
+                                        <span>₹<span id="registration-fee">10000</span></span>
                                     </p>
                                     <p class="d-flex justify-content-between">
-                                        <span>Guest Fees:</span>
-                                        <span>₹<span id="guest-fees">0</span></span>
+                                        <span>Spouse/Companion Fees:</span>
+                                        <span>₹<span id="spouse-fees">5000</span></span>
+                                    </p>
+                                    <p class="d-flex justify-content-between">
+                                        <span>Children Above 12 Fees:</span>
+                                        <span>₹<span id="children-above-12-fees">3000</span></span>
+                                    </p>
+                                    <p class="d-flex justify-content-between">
+                                        <span>Children Below 12 Fees:</span>
+                                        <span>₹<span id="children-below-12-fees">0</span></span>
                                     </p>
                                     <p class="d-flex justify-content-between">
                                         <span>Contribution:</span>
@@ -207,7 +216,7 @@
                                     </p>
                                     <p class="d-flex justify-content-between fw-bold">
                                         <span>Total:</span>
-                                        <span>₹<span id="total-amount">1000</span></span>
+                                        <span>₹<span id="total-amount">10000</span></span>
                                     </p>
                                 </div>
                                 <div class="d-grid">

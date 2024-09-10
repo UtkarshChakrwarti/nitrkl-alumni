@@ -94,12 +94,12 @@ body {
 }
 
 .navbar-brand img {
-    height: 50px;
+    height: 30px;
 }
 
 .navbar-brand .brand-text {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: .7rem;
     color: var(--secondary-color);
     line-height: 1.2;
     text-transform: uppercase;
