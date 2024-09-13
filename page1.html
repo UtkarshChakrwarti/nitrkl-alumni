@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v5.9.18, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/logo-96x93.png" type="image/x-icon">
+    <meta name="description" content="">
+
+    <title>Registration</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/animatecss/animate.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
+    </noscript>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
+    </noscript>
+    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=8LwptM">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=8LwptM" type="text/css">
+
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .form-step {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .order-summary {
+            border: 1px solid #ddd;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .btn-custom-round {
+            background-color: #dc3545;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            padding: 0;
+        }
+
+        .btn-custom-round:hover {
+            background-color: #bb2d3b;
+            color: white;
+        }
+
+        .btn-outline-secondary {
+            background-color: #e7e7e7;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #dcdcdc;
+        }
+    </style>
+</head>
+
+<body>
+    <section data-bs-version="5.1" class="menu menu2 cid-sFCw1qGFAI" once="menu" id="menu2-5">
+        <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+            <div class="container">
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <img src="assets/images/logo-96x93.png" alt="NIT Rourkela " style="height: 3rem;">
+                    </span>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-7" href="">Alumni,
+                            Industry and International Relations
+                            <br>National Institute of Technology Rourkela&nbsp;<br></a></span>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
+                    data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                        <li class="nav-item"><a class="nav-link link text-black text-primary display-4"
+                                href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link link text-black text-primary display-4"
+                                href="index.html#features3-1p">Events</a></li>
+                        <li class="nav-item"><a class="nav-link link text-black text-primary display-4"
+                                href="index.html#map1-2">Venue</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <section data-bs-version="5.1" class="form3 cid-uocbnfBLmK" id="form3-7">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-12">
+                    <div class="form-wrapper">
+                        <!-- Step 1: Email Verification -->
+                        <div class="form-step" id="step1">
+                            <h2 class="mbr-section-title mb-4 display-2">Registration or Verification of Booking</h2>
+                            <p class="mbr-text mbr-fonts-style mb-4 display-7">Enter your email to begin</p>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email" class="form-control" id="email">
+                            </div>
+                            <div class="mbr-section-btn">
+                                <button type="button" class="btn btn-danger display-4" onclick="verifyEmail()">Verify
+                                    Email</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: OTP Verification -->
+                        <div class="form-step hidden" id="step2">
+                            <h2 class="mbr-section-title mb-4 display-2">Enter OTP</h2>
+                            <div class="form-group">
+                                <input type="text" name="otp" placeholder="Enter OTP" class="form-control" id="otp">
+                            </div>
+                            <div class="mbr-section-btn">
+                                <button type="button" class="btn btn-danger display-4" onclick="verifyOTP()">Verify
+                                    OTP</button>
+                            </div>
+                        </div>
+
+                        <!-- Bootstrap Alerts for validation -->
+                        <div id="alertPlaceholder"></div>
+
+                        <!-- Step 3: Personal Details -->
+                        <div class="form-step hidden" id="step3">
+                            <h2 class="mbr-section-title mb-4 display-2">Personal Details</h2>
+                            <div class="form-group">
+                                <input type="text" name="firstName" placeholder="First Name" class="form-control"
+                                    id="firstName">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="middleName" placeholder="Middle Name" class="form-control"
+                                    id="middleName">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="lastName" placeholder="Last Name" class="form-control"
+                                    id="lastName">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Phone Number" class="form-control"
+                                    id="phone">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="whatsapp" placeholder="WhatsApp Number" class="form-control"
+                                    id="whatsapp">
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="sameWhatsapp"
+                                        onchange="toggleWhatsapp()">
+                                    <label class="form-check-label" for="sameWhatsapp">Same number for WhatsApp</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <select name="gender" class="form-control" id="gender">
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select name="graduationYear" class="form-control" id="graduationYear">
+                                    <option value="">Select Graduation Year</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="branch" placeholder="Branch" class="form-control" id="branch">
+                            </div>
+                            <div class="mbr-section-btn">
+                                <button type="button" class="btn btn-danger display-4"
+                                    onclick="nextStep()">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Additional Information -->
+                        <div class="form-step hidden" id="step4">
+                            <h2 class="mbr-section-title mb-4 display-2">Additional Information</h2>
+                            <div class="form-group">
+                                <label>Spouse/Companion Registration:</label>
+                                <div class="input-group">
+                                    <button type="button" class="btn btn-custom-round"
+                                        onclick="adjustCount('spouse', -1)">-</button>
+                                    <input type="text" class="form-control text-center" id="spouseCount" value="0"
+                                        readonly>
+                                    <button type="button" class="btn btn-custom-round"
+                                        onclick="adjustCount('spouse', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Children above 12 years:</label>
+                                <div class="input-group">
+                                    <button type="button" class="btn btn-custom-round"
+                                        onclick="adjustCount('childAbove12', -1)">-</button>
+                                    <input type="text" class="form-control text-center" id="childAbove12Count" value="0"
+                                        readonly>
+                                    <button type="button" class="btn btn-custom-round"
+                                        onclick="adjustCount('childAbove12', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Children below 12 years:</label>
+                                <div class="input-group">
+                                    <button type="button" class="btn btn-custom-round"
+                                        onclick="adjustCount('childBelow12', -1)">-</button>
+                                    <input type="text" class="form-control text-center" id="childBelow12Count" value="0"
+                                        readonly>
+                                    <button type="button" class="btn btn-custom-round"
+                                        onclick="adjustCount('childBelow12', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contribution">Contribution Amount (₹):</label>
+                                <input type="number" name="contribution" class="form-control" id="contribution"
+                                    onchange="updateTotal()">
+                            </div>
+
+                            <!-- Order Summary -->
+                            <div class="order-summary">
+                                <h3>Order Summary</h3>
+                                <p>Registration Fee: ₹<span id="registrationFee">10000</span></p>
+                                <p>Spouse/Companion Fee: ₹<span id="spouseFee">0</span></p>
+                                <p>Children Above 12 Fee: ₹<span id="childAbove12Fee">0</span></p>
+                                <p>Children Below 12 Fee: ₹<span id="childBelow12Fee">0</span></p>
+                                <p>Contribution: ₹<span id="contributionAmount">0</span></p>
+                                <h4>Total: ₹<span id="totalAmount">10000</span></h4>
+                            </div>
+
+                            <div class="mbr-section-btn">
+                                <button type="button" class="btn btn-secondary display-4"
+                                    onclick="goBack()">Back</button>
+                                <button type="button" class="btn btn-danger display-4"
+                                    onclick="proceedToPayment()">Proceed to Payment</button>
+                            </div>
+                        </div>
+
+                        <!-- Payment Confirmation Modal -->
+                        <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="paymentModalLabel">Alumni Registration</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="mb-4">
+                                            <strong>FYI:</strong> You are now provisionally registered for the event.
+                                            Please pay towards registration/contribution to the following account:
+                                        </p>
+                                        <p><strong>Bank Details:</strong></p>
+                                        <p>Account Number: 123456789</p>
+                                        <p>IFSC Code: ABCD01234</p>
+                                        <p>Once done, please enter your transaction details below:</p>
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Transaction ID"
+                                                id="transactionId">
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control" placeholder="dd-mm-yyyy"
+                                                id="transactionDate">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" onclick="confirmPayment()">Confirm
+                                            Payment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-bs-version="5.1" class="content6 cid-uocewdmA0v" id="content6-b">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 col-lg-10">
+                    <hr class="line">
+                    <p class="mbr-text align-center mbr-fonts-style my-4 display-5"><em>Join us at the prestigious
+                            Eagleton The Golf Resort, known for its beautiful landscape and world-class facilities.
+                            Perfect for reconnecting with old friends and making new memories.</em></p>
+                    <hr class="line">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-bs-version="5.1" class="contacts4 cid-uoccQjs0mt" id="contacts4-9">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="text-content col-12 col-md-6">
+                    <h2 class="mbr-section-title mbr-fonts-style display-2">
+                        <strong>Follow Us</strong>
+                    </h2>
+                    <p class="mbr-text mbr-fonts-style display-7">NIT Rourkela is one of the premier national level
+                        institutions for technical education in the country and is funded by the Government of India.
+                        The Government of India has elevated the Regional Engineering College, Rourkela to a university
+                        under the name of National Institute of Technology, Rourkela.</p>
+                </div>
+                <div class="icons d-flex align-items-center col-12 col-md-6 justify-content-end mt-md-0 mt-2 flex-wrap">
+                    <a href="https://twitter.com/nitrourkela" target="_blank">
+                        <span class="mbr-iconfont mbr-iconfont-social socicon-twitter socicon"></span>
+                    </a>
+                    <a href="https://www.facebook.com/nitrkl1" target="_blank">
+                        <span class="mbr-iconfont mbr-iconfont-social socicon-facebook socicon"></span>
+                    </a>
+                    <a href="https://www.youtube.com/@NITROURKELA1961" target="_blank">
+                        <span class="mbr-iconfont mbr-iconfont-social socicon-youtube socicon"></span>
+                    </a>
+                    <a href="https://www.instagram.com/nitrourkela1961/" target="_blank">
+                        <span class="mbr-iconfont mbr-iconfont-social socicon-instagram socicon"></span>
+                    </a>
+                    <a href="https://www.linkedin.com/school/national-institute-of-technology-rourkela/"
+                        target="_blank">
+                        <span class="mbr-iconfont mbr-iconfont-social socicon-linkedin socicon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-bs-version="5.1" class="footer3 cid-uoccQO4qg3 mbr-reveal" once="footers" id="footer3-a">
+        <div class="container-fluid">
+            <div class="row align-center mbr-white">
+                <div class="row row-copirayt">
+                    <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                        Copyright © 2024 National Institute of Technology Rourkela. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/smoothscroll/smooth-scroll.js"></script>
+    <script src="assets/ytplayer/index.js"></script>
+    <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+    <script src="assets/sociallikes/social-likes.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function showStep(step) {
+            for (let i = 1; i <= totalSteps; i++) {
+                document.getElementById(`step${i}`).classList.add('hidden');
+            }
+            document.getElementById(`step${step}`).classList.remove('hidden');
+            currentStep = step;
+        }
+
+        function verifyEmail() {
+            const email = document.getElementById('email').value;
+            if (email && /^\S+@\S+\.\S+$/.test(email)) {
+                displayAlert('OTP sent to your email.', 'success');
+                showStep(2);
+            } else {
+                displayAlert('Please enter a valid email address.', 'danger');
+            }
+        }
+
+        function verifyOTP() {
+            const otp = document.getElementById('otp').value;
+            if (otp && otp.length === 6) {
+                displayAlert('OTP verified successfully.', 'success');
+                showStep(3);
+            } else {
+                displayAlert('Please enter a valid 6-digit OTP.', 'danger');
+            }
+        }
+
+        function nextStep() {
+            if (validateStep(currentStep)) {
+                showStep(currentStep + 1);
+            }
+        }
+
+        function goBack() {
+            showStep(currentStep - 1);
+        }
+
+        function validateStep(step) {
+            if (step === 3) {
+                const requiredFields = ['firstName', 'lastName', 'phone', 'gender', 'graduationYear', 'branch'];
+                for (let field of requiredFields) {
+                    if (!document.getElementById(field).value) {
+                        displayAlert(`Please fill out the ${field.replace(/([A-Z])/g, ' $1').toLowerCase()} field.`, 'danger');
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function toggleWhatsapp() {
+            const sameWhatsapp = document.getElementById('sameWhatsapp').checked;
+            document.getElementById('whatsapp').disabled = sameWhatsapp;
+        }
+
+        function adjustCount(type, change) {
+            const countElement = document.getElementById(`${type}Count`);
+            let count = parseInt(countElement.value) + change;
+            count = Math.max(0, count);
+            countElement.value = count;
+            updateTotal();
+        }
+
+        function updateTotal() {
+            const registrationFee = 10000;
+            const spouseFee = parseInt(document.getElementById('spouseCount').value) * 5000;
+            const childAbove12Fee = parseInt(document.getElementById('childAbove12Count').value) * 3000;
+            const childBelow12Fee = parseInt(document.getElementById('childBelow12Count').value) * 0;
+            const contribution = parseInt(document.getElementById('contribution').value) || 0;
+
+            document.getElementById('registrationFee').innerText = registrationFee;
+            document.getElementById('spouseFee').innerText = spouseFee;
+            document.getElementById('childAbove12Fee').innerText = childAbove12Fee;
+            document.getElementById('childBelow12Fee').innerText = childBelow12Fee;
+            document.getElementById('contributionAmount').innerText = contribution;
+
+            const total = registrationFee + spouseFee + childAbove12Fee + childBelow12Fee + contribution;
+            document.getElementById('totalAmount').innerText = total;
+        }
+
+        function proceedToPayment() {
+            displayAlert('Proceeding to payment...', 'info');
+            // Trigger the payment confirmation modal
+            var paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+            paymentModal.show();
+        }
+
+        function confirmPayment() {
+            const transactionId = document.getElementById('transactionId').value;
+            const transactionDate = document.getElementById('transactionDate').value;
+            if (transactionId && transactionDate) {
+                displayAlert('Payment confirmed! Your registration is complete.', 'success');
+            } else {
+                displayAlert('Please enter the transaction ID and date.', 'danger');
+            }
+        }
+
+        function displayAlert(message, type) {
+            const alertPlaceholder = document.getElementById('alertPlaceholder');
+            alertPlaceholder.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>`;
+        }
+
+        // Populate graduation year dropdown
+        const graduationYear = document.getElementById('graduationYear');
+        const currentYear = new Date().getFullYear();
+        for (let year = currentYear; year >= 1950; year--) {
+            const option = document.createElement('option');
+            option.value = year;
+            option.textContent = year;
+            graduationYear.appendChild(option);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            showStep(1);
+            updateTotal();
+        });
+    </script>
+
+    <input name="animation" type="hidden">
+</body>
+
+</html>
